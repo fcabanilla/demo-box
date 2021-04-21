@@ -1,0 +1,38 @@
+{
+  "name": "demo-box",
+  "version": "1.0.0",
+  "description": "This is a project to present the box custody company, and apply for the position of Technical Leader.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "nodedmon": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo",
+    "box",
+    "custodia",
+    "box-custodia",
+    "fcabanilla",
+    "federico",
+    "cabanilla",
+    "cabanilla"
+  ],
+  "author": "fcabanilla",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http-status-codes": "^2.1.4",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.4",
+    "mongoose-pagination": "^1.0.0",
+    "openweather-apis": "^4.4.1",
+    "request": "^2.88.2"
+  }
+}

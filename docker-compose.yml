@@ -1,0 +1,40 @@
+version: '3.2'
+
+services:
+
+  mongo:
+    image: mongo:latest
+    volumes:
+      - ./data:/data/db
+    ports:
+      - '27017:27017'
+
+  node:
+    image: 'node:12.15.0'
+    user: 'node'
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
+    command: "npm start"
+    depends_on:
+      - mongo
+
+  nginx:
+    command: nginx
+    build:
+      context: ./nginx
+      dockerfile: DockerfileNginx
+    ports:
+      - '80:80'
+    depends_on:
+      - node
+    volumes:
+      - ./public:/code/static
+      
+  portainer:
+    image: portainer/portainer
+    volumes:
+      - ./portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 9000:9000
